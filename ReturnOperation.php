@@ -20,7 +20,7 @@ use NW\WebService\References\Operations\Notification\Status;
  *
  * Создание уведомлений: Используются различные методы для отправки уведомлений, включая сообщения по электронной почте (MessagesClient::sendMessage) и SMS-уведомления (NotificationManager::send).
  *
- * Качество кода оставляет желать лучшего, он даже не компилировался, тип возвращаемого значения doOperation() не был задан, $error не был задан. Из некритичного, фраза client not found! была с маленькой буквы
+ * Качество кода оставляет желать лучшего, он даже не компилировался, тип возвращаемого значения doOperation() не был задан, $error не был задан, не было ссылок на классы из файла others.php. Из некритичного, фраза client not found! была с маленькой буквы
  */
 
 class TsReturnOperation extends ReferencesOperation
