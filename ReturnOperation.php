@@ -1,6 +1,27 @@
 <?php
 
 namespace NW\WebService\References\Operations\Notification;
+use Error;
+use NW\WebService\References\Operations\Notification\Seller;
+use NW\WebService\References\Operations\Notification\Contractor;
+use NW\WebService\References\Operations\Notification\Employee;
+use NW\WebService\References\Operations\Notification\Status;
+
+/**
+ * Этот код представляет собой реализацию операции веб-сервиса в рамках определенного приложения. В частности, это операция по возврату товаров (TsReturnOperation) с отправкой уведомлений различным пользователям.
+ *
+ * Назначение основных частей кода:
+ *
+ * Константы: Определены константы TYPE_NEW и TYPE_CHANGE для удобного использования типов уведомлений.
+ *
+ * Метод doOperation: Этот метод выполняет основную логику операции возврата товаров. Включает в себя обработку входных данных, проверки наличия необходимых данных, создание сообщений для уведомлений и их отправку.
+ *
+ * Проверки и исключения: Код содержит проверки и выбрасывание исключений в случае ошибок, например, если не удалось найти продавца (Seller not found!), клиента (Client not found!), создателя (Creator not found!), эксперта (Expert not found!), или если не удалось определить различия в статусе товара.
+ *
+ * Создание уведомлений: Используются различные методы для отправки уведомлений, включая сообщения по электронной почте (MessagesClient::sendMessage) и SMS-уведомления (NotificationManager::send).
+ *
+ * Качество кода оставляет желать лучшего, он даже не компилировался, тип возвращаемого значения doOperation() не был задан, $error не был задан. Из некритичного, фраза client not found! была с маленькой буквы
+ */
 
 class TsReturnOperation extends ReferencesOperation
 {
